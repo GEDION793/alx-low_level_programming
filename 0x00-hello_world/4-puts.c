@@ -1,18 +1,14 @@
-/*
- *Written by GEDION793
- *prints a statement
- *
- */
 #include <stdio.h>
 
 /**
-* main - Prints
+* main-Entry point
 *
 *
 * Return: Always 0 (Success)
 */
+
 int main(void)
 {
-        puts("\"programming is like building a multilingual puzzel");
-        return (0);
-}
+puts ("\"programming is like building a multilingual puzzel");
+return (0);
+} 
