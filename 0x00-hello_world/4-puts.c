@@ -1,3 +1,8 @@
+/*
+ *Written by GEDION793
+ *prints a statement
+ *
+ */
 #include <stdio.h>
 
 /**
