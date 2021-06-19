@@ -1,19 +1,12 @@
-/*
- *File: 5-printf.c
- *
- *Written by GEDION793
- *
- */
 #include <stdio.h>
+
 /**
- *main - prints "with proper gramar, but the outcome is a piece of art,"
- *
- *
- *Return: Always 0.
- */
+*main - Entry point
+*
+*Return: Always 0 (success)
+*/
 int main(void)
 {
-        printf("with proper grammar, but the outcome is a piece of art,\n");
-
-        return (0);
+printf("with proper grammar, but the outcome is a piece of art,\n");
+return (0);
 }
