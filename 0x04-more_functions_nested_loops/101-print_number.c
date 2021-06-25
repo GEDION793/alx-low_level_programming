@@ -1,27 +1,37 @@
 #include "holberton.h"
 
 /**
-*print_number - prints an integer
-*@n: integer to be printed
+*print_number - converts an integer into a string
+*@n: integer passed from main
+*
+*Return: void
 */
 
 void print_number(int n)
 {
-unsigned int n1;
+unsigned int m;
 
-if (n < 0)
+if (n > 9)
 {
-n1 = -n;
+print_number(n / 10);
+_putchar('0' + (n % 10));
+}
+else if (n > -1)
+{
+_putchar('0' + n);
+}
+else if (n > -10)
+{
 _putchar('-');
-} else
-{
-n1 = n;
+n = n * (-1);
+_putchar('0' + n);
 }
-
-if (n1 / 10)
+else
 {
-print_number(n1 / 10);
+_putchar('-');
+n = n * (-1);
+m = (unsigned int) n;
+print_number(m / 10);
+_putchar('0' + (m % 10));
 }
-
-_putchar((n1 % 10) + '0');
 }
