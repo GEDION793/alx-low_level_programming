@@ -1,45 +1,36 @@
 #include "holberton.h"
 
 /**
-*is_numerical - Check if is a digit
-*@n: Number
-*Return: If is a number, return 1 else return 0
+*_atoi - Convert a string to integer.
+*@s: char array string
+*Return: first integer found in string
 */
-int is_numerical(unsigned int n)
-{
-return (n >= '0' && n <= '9');
-}
 
-/**
-*_atoi - Convert a string to a number
-*@s: String
-*Return: Return the num
-*/
 int _atoi(char *s)
 {
-unsigned int number, i;
-int sign;
+int i;
+int h, p;
 
-sign = 1;
-number = 0;
-
-/*Start FOR*/
+h = 0;
+p = -1;
 for (i = 0; s[i] != '\0'; i++)
 {
-if (is_numerical(s[i])) /*Condition*/
-{
-number = (s[i] - 48)  + number * 10;
+if (s[i] == '-')
+p *= -1;
 
-if (s[i + 1] == ' ')
+if (s[i] > 47 && s[i] < 58)
+{
+if (h < 0)
+h = (h * 10) - (s[i] - '0');
+else
+h = (s[i] - '0') * -1;
+
+if (s[i + 1] < 48 || s[i + 1] > 57)
 break;
 }
-else if (s[i] == '-')
-{
-sign *= -1;
 }
+if (p < 0)
+h *= -1;
 
-}
-
-return (number * sign);
-
+return (h);
 }
