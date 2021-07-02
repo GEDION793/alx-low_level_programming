@@ -1,57 +1,34 @@
-#include <stdio.h>
 #include "holberton.h"
 /**
-*exponent - x to the power of y
-*@x: base number
-*@y: exponent
-*Description: calcuates x^y
-*Return: x^y
-*
-**/
-int exponent(int x, int y)
+*print_number - prints a number
+*@n: Input number
+*/
+
+void print_number(int n)
 {
-int power;
-power = x;
-if (x == 0)
-return (0);
-if (y == 0)
-return (1);
-while (y >= 2)
+int res, temp, expo;
+
+expo = 1;
+/*Check negatives*/
+if (n >= 0)
+res = n * -1;
+else
 {
-power  = power *x;
-y--;
-}
-return (power);
-}
-/**
-*print_number - print an int using only _putchar
-*@number: int to be printed by function
-*
-*Return: nothing
-**/
-void print_number(int number)
-{
-int size, digit, counter, sign;
-sign = 1;
-digit = 0;
-size = 1;
-counter = number;
-if (number < 0)
-{
+res = n;
 _putchar('-');
-sign = -1;
 }
-for (; counter >= 10 || counter <= -10; size++)
+
+/*Initialize exponent variable*/
+temp = res;
+while (temp <= -10)
 {
-counter = counter / 10;
+expo *= 10;
+temp /= 10;
 }
-counter = number;
-while (size >= 2)
+/*Main */
+while (expo >= 1)
 {
-digit = (counter / exponent(10, size - 1)) * sign;
-_putchar(digit + '0');
-counter = counter % exponent(10, size - 1);
-size--;
+_putchar(((res / expo) % 10) * -1 + '0');
+expo /= 10;
 }
-_putchar(sign *counter % 10 + '0');
 }
