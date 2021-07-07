@@ -37,5 +37,5 @@ return (0);
 else
 {
 return (isPrime(n, n - 1));
-} 
+}
 }
