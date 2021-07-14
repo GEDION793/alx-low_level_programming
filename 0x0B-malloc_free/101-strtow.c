@@ -7,7 +7,7 @@
 *
 *Return: int of number of words
 */
-int wrdcnt(char *s) 
+int wrdcnt(char *s)
 {
 int i, n = 0;
 
@@ -16,13 +16,13 @@ for (i = 0; s[i]; i++)
 if (s[i] == ' ')
 {
 if (s[i + 1] != ' ' && s[i + 1] != '\0')
-n++; 
+n++;
 }
 else if (i == 0)
-n++; 
+n++;
 }
 n++;
-return (n); 
+return (n);
 }
 
 /**
